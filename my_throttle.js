@@ -1,15 +1,15 @@
-let tooSoon = false;
-
 Function.prototype.myThrottle = function(interval){
-
-    if (!tooSoon) {
-        tooSoon = true;
-        setTimeout(() => {
-            tooSoon = false;
-        }, interval);
+    let tooSoon;
+    return () => {
+        if (!tooSoon) {
+            tooSoon = true;
+            setTimeout(() => {
+                tooSoon = false
+            }, interval)
+            this(interval);
+        }
     }
 
-    return this;
 }
 
   
