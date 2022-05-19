@@ -15,19 +15,18 @@ function addNumbers (sum, numsLeft, completionCallback) {
     console.log(`your number is ${res}`);
     console.log(`partial sum = ${sum}`)
     addNumbers(sum, numsLeft-1, completionCallback)
-})
-    // numsLeft--;
-    // sum += response
+    })
 }
 else  {
     completionCallback(sum)
+    reader.close()
 }
-    // console.log(`partial sum = ${sum}`)
 
-
-// completionCallback(sum)
 
 }
 
 console.log(addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`) ));
-reader.close()
+// addNumbers(0, 3, function (sum) {
+//     console.log("Total Sum: " + sum);
+//     reader.close();
+//   });
